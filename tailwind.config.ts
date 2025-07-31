@@ -52,6 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				agent: {
+					compliance: 'hsl(var(--agent-compliance))',
+					approval: 'hsl(var(--agent-approval))',
+					payment: 'hsl(var(--agent-payment))',
+					supervisor: 'hsl(var(--agent-supervisor))'
+				},
+				status: {
+					pending: 'hsl(var(--status-pending))',
+					approved: 'hsl(var(--status-approved))',
+					flagged: 'hsl(var(--status-flagged))',
+					processing: 'hsl(var(--status-processing))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +96,40 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'agent-pulse': {
+					'0%, 100%': { opacity: '0.7' },
+					'50%': { opacity: '1' }
+				},
+				'status-flow': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
+				},
+				'glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 20px hsl(var(--accent) / 0.3)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 40px hsl(var(--accent) / 0.6)' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'agent-pulse': 'agent-pulse 2s ease-in-out infinite',
+				'status-flow': 'status-flow 2s ease-in-out infinite',
+				'glow': 'glow 3s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-agent': 'var(--gradient-agent)'
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'glow': 'var(--shadow-glow)',
+				'agent': 'var(--shadow-agent)'
 			}
 		}
 	},
