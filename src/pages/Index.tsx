@@ -8,6 +8,8 @@ import AuditTrail from "@/components/excess/AuditTrail";
 import IntegrationManager from "@/components/excess/IntegrationManager";
 import ProjectView from "@/components/excess/ProjectView";
 import PerformanceAnalytics from "@/components/excess/PerformanceAnalytics";
+import InvoiceExplorer from "@/components/excess/InvoiceExplorer";
+import MCPInspector from "@/components/excess/MCPInspector";
 
 const Index = () => {
   const [currentRole, setCurrentRole] = useState<string | null>(null);
@@ -43,19 +45,9 @@ const Index = () => {
       case "chat":
         return <ChatInterface />;
       case "invoices":
-        return (
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-foreground">Invoice Explorer</h2>
-            <p className="text-muted-foreground">Invoice management interface coming soon...</p>
-          </div>
-        );
+        return <InvoiceExplorer />;
       case "mcp":
-        return (
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-foreground">MCP Inspector</h2>
-            <p className="text-muted-foreground">MCP state visualization coming soon...</p>
-          </div>
-        );
+        return <MCPInspector />;
       default:
         return <Dashboard role={currentRole} />;
     }
