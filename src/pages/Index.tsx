@@ -4,6 +4,10 @@ import Navigation from "@/components/excess/Navigation";
 import Dashboard from "@/components/excess/Dashboard";
 import AgentControl from "@/components/excess/AgentControl";
 import ChatInterface from "@/components/excess/ChatInterface";
+import AuditTrail from "@/components/excess/AuditTrail";
+import IntegrationManager from "@/components/excess/IntegrationManager";
+import ProjectView from "@/components/excess/ProjectView";
+import PerformanceAnalytics from "@/components/excess/PerformanceAnalytics";
 
 const Index = () => {
   const [currentRole, setCurrentRole] = useState<string | null>(null);
@@ -26,6 +30,18 @@ const Index = () => {
     switch (currentView) {
       case "dashboard":
         return <Dashboard role={currentRole} />;
+      case "projects":
+        return <ProjectView />;
+      case "agents":
+        return <AgentControl />;
+      case "integrations":
+        return <IntegrationManager />;
+      case "analytics":
+        return <PerformanceAnalytics />;
+      case "audit":
+        return <AuditTrail />;
+      case "chat":
+        return <ChatInterface />;
       case "invoices":
         return (
           <div className="space-y-6">
@@ -33,8 +49,6 @@ const Index = () => {
             <p className="text-muted-foreground">Invoice management interface coming soon...</p>
           </div>
         );
-      case "agents":
-        return <AgentControl />;
       case "mcp":
         return (
           <div className="space-y-6">
@@ -42,8 +56,6 @@ const Index = () => {
             <p className="text-muted-foreground">MCP state visualization coming soon...</p>
           </div>
         );
-      case "chat":
-        return <ChatInterface />;
       default:
         return <Dashboard role={currentRole} />;
     }

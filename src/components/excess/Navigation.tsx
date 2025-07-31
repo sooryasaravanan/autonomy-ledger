@@ -11,7 +11,10 @@ import {
   Menu,
   X,
   Network,
-  LogOut
+  LogOut,
+  Building,
+  BarChart3,
+  Shield
 } from "lucide-react";
 
 interface NavigationProps {
@@ -24,8 +27,12 @@ interface NavigationProps {
 const navItems = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
   { id: "invoices", label: "Invoices", icon: FileText, badge: "12" },
+  { id: "projects", label: "Projects", icon: Building },
   { id: "agents", label: "Agents", icon: Brain },
   { id: "mcp", label: "MCP", icon: Network },
+  { id: "integrations", label: "Integrations", icon: Settings },
+  { id: "analytics", label: "Analytics", icon: BarChart3 },
+  { id: "audit", label: "Audit Trail", icon: Shield },
   { id: "chat", label: "Ask Excess", icon: MessageSquare },
 ];
 
