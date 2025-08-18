@@ -13,39 +13,25 @@ interface Role {
 
 const roles: Role[] = [
   {
-    id: "cfo",
-    title: "CFO / Finance Executive",
-    description: "Global financial visibility and high-level metrics",
-    icon: Brain,
-    color: "text-agent-supervisor"
-  },
-  {
-    id: "ap",
-    title: "Accounts Payable",
-    description: "Manage approval, matching, and payment workflows",
-    icon: CheckCircle,
-    color: "text-agent-approval"
-  },
-  {
-    id: "pm",
-    title: "Project Manager",
-    description: "Approve project-specific invoices and expenses",
+    id: "subcontractor",
+    title: "Subcontractor Portal",
+    description: "Upload invoices, track status & payments - Free access",
     icon: Users,
     color: "text-agent-payment"
   },
   {
-    id: "compliance",
-    title: "Compliance Officer",
-    description: "Manage flagged documents and audit trails",
-    icon: Shield,
-    color: "text-agent-compliance"
+    id: "gc",
+    title: "GC Portal", 
+    description: "Multi-project management, AI compliance, approvals & payments",
+    icon: Brain,
+    color: "text-agent-supervisor"
   },
   {
-    id: "admin",
-    title: "Agent Supervisor",
-    description: "Manage MCP, agent settings, and RAG system",
-    icon: Settings,
-    color: "text-accent"
+    id: "owner",
+    title: "Owner Portal",
+    description: "Review pay applications, approve/reject, fund release tracking",
+    icon: Shield,
+    color: "text-agent-compliance"
   }
 ];
 

@@ -24,28 +24,47 @@ interface NavigationProps {
   onLogout: () => void;
 }
 
-const navItems = [
-  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { id: "invoices", label: "Invoices", icon: FileText, badge: "12" },
-  { id: "projects", label: "Projects", icon: Building },
-  { id: "agents", label: "Agents", icon: Brain },
-  { id: "mcp", label: "MCP", icon: Network },
-  { id: "integrations", label: "Integrations", icon: Settings },
-  { id: "analytics", label: "Analytics", icon: BarChart3 },
-  { id: "audit", label: "Audit Trail", icon: Shield },
-  { id: "chat", label: "Ask Excess", icon: MessageSquare },
-];
+// Role-specific navigation items
+const getNavItemsForRole = (role: string) => {
+  switch (role) {
+    case "subcontractor":
+      return [
+        { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+        { id: "invoices", label: "Upload Invoice", icon: FileText },
+        { id: "projects", label: "Track Status", icon: Building },
+      ];
+    case "gc":
+      return [
+        { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+        { id: "invoices", label: "Invoice Management", icon: FileText, badge: "12" },
+        { id: "projects", label: "Multi-Project View", icon: Building },
+        { id: "agents", label: "AI Compliance", icon: Brain },
+        { id: "analytics", label: "Approvals & Payments", icon: BarChart3 },
+        { id: "chat", label: "Pay App Generation", icon: MessageSquare },
+      ];
+    case "owner":
+      return [
+        { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+        { id: "projects", label: "Pay Applications", icon: Building },
+        { id: "invoices", label: "Supporting Docs", icon: FileText },
+        { id: "analytics", label: "Fund Release", icon: BarChart3 },
+      ];
+    default:
+      return [
+        { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+      ];
+  }
+};
 
 const roleLabels: Record<string, string> = {
-  cfo: "CFO",
-  ap: "Accounts Payable",
-  pm: "Project Manager", 
-  compliance: "Compliance Officer",
-  admin: "Agent Supervisor"
+  subcontractor: "Subcontractor Portal",
+  gc: "GC Portal",
+  owner: "Owner Portal"
 };
 
 export default function Navigation({ currentView, onViewChange, role, onLogout }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navItems = getNavItemsForRole(role);
 
   return (
     <>
