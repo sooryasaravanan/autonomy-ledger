@@ -16,6 +16,9 @@ import SubcontractorCompliance from "@/components/excess/SubcontractorCompliance
 import SubcontractorPayments from "@/components/excess/SubcontractorPayments";
 import GCInvoices from "@/components/excess/GCInvoices";
 import GCApprovals from "@/components/excess/GCApprovals";
+import GCCompliance from "@/components/excess/GCCompliance";
+import GCPayments from "@/components/excess/GCPayments";
+import GCRiskInsights from "@/components/excess/GCRiskInsights";
 
 const Index = () => {
   const [currentRole, setCurrentRole] = useState<string | null>(null);
@@ -57,7 +60,25 @@ const Index = () => {
       }
     }
 
-    // For other roles, use existing components
+    // For GC role, render specific components
+    if (currentRole === "gc") {
+      switch (currentView) {
+        case "dashboard":
+          return <Dashboard role={currentRole} />;
+        case "invoices":
+          return <GCInvoices />;
+        case "projects":
+          return <ProjectView />;
+        case "agents":
+          return <GCApprovals />;
+        case "analytics":
+          return <PerformanceAnalytics />;
+        case "chat":
+          return <ChatInterface />;
+        default:
+          return <Dashboard role={currentRole} />;
+      }
+    }
     switch (currentView) {
       case "dashboard":
         return <Dashboard role={currentRole} />;
