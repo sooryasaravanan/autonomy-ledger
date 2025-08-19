@@ -41,11 +41,11 @@ const Index = () => {
         case "invoices":
           return <SubcontractorInvoices />;
         case "documents":
-          return <div className="p-6"><h1 className="text-2xl font-bold">Documents</h1><p>Document management interface</p></div>;
+          return <SubcontractorDocuments />;
         case "compliance":
-          return <div className="p-6"><h1 className="text-2xl font-bold">Compliance</h1><p>Compliance tracking interface</p></div>;
+          return <SubcontractorCompliance />;
         case "payments":
-          return <div className="p-6"><h1 className="text-2xl font-bold">Payments</h1><p>Payment tracking interface</p></div>;
+          return <SubcontractorPayments />;
         case "messages":
           return <div className="p-6"><h1 className="text-2xl font-bold">Messages</h1><p>Message threads interface</p></div>;
         case "settings":
