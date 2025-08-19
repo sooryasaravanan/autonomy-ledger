@@ -40,11 +40,14 @@ const getNavItemsForRole = (role: string) => {
     case "gc":
       return [
         { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-        { id: "invoices", label: "Invoice Management", icon: FileText, badge: "12" },
-        { id: "projects", label: "Multi-Project View", icon: Building },
-        { id: "agents", label: "AI Compliance", icon: Brain },
-        { id: "analytics", label: "Approvals & Payments", icon: BarChart3 },
-        { id: "chat", label: "Pay App Generation", icon: MessageSquare },
+        { id: "invoices", label: "Invoices", icon: FileText, badge: "12" },
+        { id: "approvals", label: "Approvals", icon: Brain, badge: "8" },
+        { id: "compliance", label: "Compliance", icon: Shield },
+        { id: "payments", label: "Payments", icon: BarChart3 },
+        { id: "risk", label: "Risk & Insights", icon: Network },
+        { id: "messages", label: "Messages", icon: MessageSquare, badge: "5" },
+        { id: "audit", label: "Audit Trail", icon: Settings },
+        { id: "settings", label: "Settings", icon: Settings },
       ];
     case "owner":
       return [

@@ -19,6 +19,9 @@ import GCApprovals from "@/components/excess/GCApprovals";
 import GCCompliance from "@/components/excess/GCCompliance";
 import GCPayments from "@/components/excess/GCPayments";
 import GCRiskInsights from "@/components/excess/GCRiskInsights";
+import GCMessages from "@/components/excess/GCMessages";
+import GCAuditTrail from "@/components/excess/GCAuditTrail";
+import GCSettings from "@/components/excess/GCSettings";
 
 const Index = () => {
   const [currentRole, setCurrentRole] = useState<string | null>(null);
@@ -67,14 +70,20 @@ const Index = () => {
           return <Dashboard role={currentRole} />;
         case "invoices":
           return <GCInvoices />;
-        case "projects":
-          return <ProjectView />;
-        case "agents":
+        case "approvals":
           return <GCApprovals />;
-        case "analytics":
-          return <PerformanceAnalytics />;
-        case "chat":
-          return <ChatInterface />;
+        case "compliance":
+          return <GCCompliance />;
+        case "payments":
+          return <GCPayments />;
+        case "risk":
+          return <GCRiskInsights />;
+        case "messages":
+          return <GCMessages />;
+        case "audit":
+          return <GCAuditTrail />;
+        case "settings":
+          return <GCSettings />;
         default:
           return <Dashboard role={currentRole} />;
       }
