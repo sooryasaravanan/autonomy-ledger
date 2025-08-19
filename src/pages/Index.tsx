@@ -11,6 +11,9 @@ import PerformanceAnalytics from "@/components/excess/PerformanceAnalytics";
 import InvoiceExplorer from "@/components/excess/InvoiceExplorer";
 import MCPInspector from "@/components/excess/MCPInspector";
 import SubcontractorInvoices from "@/components/excess/SubcontractorInvoices";
+import SubcontractorDocuments from "@/components/excess/SubcontractorDocuments";
+import SubcontractorCompliance from "@/components/excess/SubcontractorCompliance";
+import SubcontractorPayments from "@/components/excess/SubcontractorPayments";
 
 const Index = () => {
   const [currentRole, setCurrentRole] = useState<string | null>(null);
