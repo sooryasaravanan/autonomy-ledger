@@ -14,6 +14,8 @@ import SubcontractorInvoices from "@/components/excess/SubcontractorInvoices";
 import SubcontractorDocuments from "@/components/excess/SubcontractorDocuments";
 import SubcontractorCompliance from "@/components/excess/SubcontractorCompliance";
 import SubcontractorPayments from "@/components/excess/SubcontractorPayments";
+import GCInvoices from "@/components/excess/GCInvoices";
+import GCApprovals from "@/components/excess/GCApprovals";
 
 const Index = () => {
   const [currentRole, setCurrentRole] = useState<string | null>(null);

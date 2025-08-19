@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SubcontractorDashboard from "./SubcontractorDashboard";
+import GCDashboard from "./GCDashboard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -92,6 +93,10 @@ export default function Dashboard({ role }: DashboardProps) {
   // Role-specific dashboard rendering
   if (role === "subcontractor") {
     return <SubcontractorDashboard />;
+  }
+  
+  if (role === "gc") {
+    return <GCDashboard />;
   }
 
   return (
