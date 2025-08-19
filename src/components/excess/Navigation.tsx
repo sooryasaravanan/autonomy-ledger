@@ -30,8 +30,12 @@ const getNavItemsForRole = (role: string) => {
     case "subcontractor":
       return [
         { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-        { id: "invoices", label: "Upload Invoice", icon: FileText },
-        { id: "projects", label: "Track Status", icon: Building },
+        { id: "invoices", label: "Invoices", icon: FileText, badge: "3" },
+        { id: "documents", label: "Documents", icon: Shield },
+        { id: "compliance", label: "Compliance", icon: Building },
+        { id: "payments", label: "Payments", icon: BarChart3 },
+        { id: "messages", label: "Messages", icon: MessageSquare, badge: "2" },
+        { id: "settings", label: "Settings", icon: Settings },
       ];
     case "gc":
       return [

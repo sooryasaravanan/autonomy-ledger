@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SubcontractorDashboard from "./SubcontractorDashboard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -87,6 +88,11 @@ const actionItems = [
 
 export default function Dashboard({ role }: DashboardProps) {
   const [selectedStage, setSelectedStage] = useState<string | null>(null);
+
+  // Role-specific dashboard rendering
+  if (role === "subcontractor") {
+    return <SubcontractorDashboard />;
+  }
 
   return (
     <div className="space-y-6">
